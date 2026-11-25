@@ -1,161 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mathematics Practice Exam</title>
-<style>
-:root{--ink:#172033;--muted:#667085;--line:#e5eaf2;--blue:#315efb;--bg:#f4f7fc;--green:#16834a;--red:#c43232}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
-header{background:linear-gradient(120deg,#172b65,#315efb);color:white;padding:30px 18px}
-.hero{max-width:900px;margin:auto}.hero h1{margin:0 0 8px;font-size:clamp(25px,4vw,36px)}.hero p{margin:0;color:#e1e8ff}
-main{max-width:900px;margin:24px auto;padding:0 16px 48px}
-.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 5px 20px #1b2d5010}
-.student{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-weight:650;font-size:14px;margin-bottom:7px}.field input,.answer{width:100%;border:1px solid #ccd5e3;border-radius:9px;padding:12px;font-size:16px;outline:none}.field input:focus,.answer:focus{border-color:var(--blue);box-shadow:0 0 0 3px #315efb18}
-.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px}.section-title h2{font-size:19px;margin:0}.tag{font-size:12px;color:#3855b8;background:#edf1ff;padding:5px 9px;border-radius:20px}
-.question{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start}.question:first-of-type{border-top:0}.number{width:30px;height:30px;border-radius:9px;background:#edf1ff;color:#315efb;display:grid;place-items:center;font-weight:750}.qtext{font-weight:600;margin:3px 0 10px;line-height:1.45}.answer{max-width:420px}.hint{font-size:12px;color:var(--muted);margin-top:5px}
-.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:var(--blue);color:white}.secondary{background:#eef1f6;color:#344054}.btn:hover{filter:brightness(.96)}
-#result{display:none}.score{font-size:30px;font-weight:800;margin:6px 0}.result-row{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:space-between}.correct{color:var(--green);font-weight:700}.incorrect{color:var(--red);font-weight:700}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:4px 0 22px}
-@media(max-width:600px){.student{grid-template-columns:1fr}.panel{padding:16px}.question{grid-template-columns:32px 1fr}.answer{max-width:100%}}
-@media print{body{background:white}header{padding:16px}.panel{box-shadow:none;break-inside:avoid}.actions,#result,footer{display:none!important}.answer{border:0;border-bottom:1px solid #777;border-radius:0}}
-</style>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/images/Fav-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adv. Haroon Solkar High School, Sai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="hero"><h1>Mathematics Practice Exam</h1><p>Exponents, decimals and fractions · 17 questions</p></div></header>
-<main>
-  <section class="panel">
-    <div class="student">
-      <div class="field"><label for="studentName">Student name</label><input id="studentName" type="text" placeholder="Enter student's name"></div>
-      <div class="field"><label for="examDate">Date</label><input id="examDate" type="date"></div>
-    </div>
-  </section>
-  <form id="examForm">
-    <section class="panel">
-      <div class="section-title"><h2>Part A · Exponents</h2><span class="tag">6 questions</span></div>
-      <div id="exponents"></div>
-    </section>
-    <section class="panel">
-      <div class="section-title"><h2>Part B · Decimals and Fractions</h2><span class="tag">5 questions</span></div>
-      <div id="decimals"></div>
-    </section>
-    <section class="panel">
-      <div class="section-title"><h2>Part C · Fraction Operations</h2><span class="tag">6 questions</span></div>
-      <div id="operations"></div>
-    </section>
-    <section class="panel">
-      <div class="actions">
-        <button class="btn primary" type="submit">Submit exam &amp; check answers</button>
-        <button class="btn secondary" type="button" onclick="window.print()">Print exam</button>
-        <button class="btn secondary" type="reset" id="resetBtn">Clear answers</button>
+<nav>
+  <div class="wrap">
+    <b>Adv. Haroon Solkar High School</b>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#campus">Campus</a></li>
+      <li><a href="#staff">Staff</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#voices">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="notice-bar" role="region" aria-label="School notices and announcements">
+  <div class="wrap notice-inner">
+    <span class="notice-label">Notices</span>
+    <div class="notice-viewport" tabindex="0">
+      <div class="notice-track">
+        <div class="notice-slide">
+          <span class="notice-tag past">Completed</span>
+          <span>Annual Sports Day track and team events held on the school playground.</span>
+        </div>
+        <div class="notice-slide">
+          <span class="notice-tag past">Completed</span>
+          <span>Teachers’ Day assembly and felicitation programme conducted for all 12 faculty members.</span>
+        </div>
+        <div class="notice-slide">
+          <span class="notice-tag upcoming">Upcoming</span>
+          <span>Science Exhibition preparations underway — students finalizing working models and projects.</span>
+        </div>
+        <div class="notice-slide">
+          <span class="notice-tag upcoming">Upcoming</span>
+          <span>School Management Committee (SMC) and parent-teacher updates available at the school office in Sai.</span>
+        </div>
       </div>
-      <p class="hint">Enter fraction answers as a/b (for example, 3/4). Decimal answers may be entered as decimals.</p>
-    </section>
-  </form>
-  <section class="panel" id="result" aria-live="polite">
-    <h2>Exam result</h2><div id="studentResult"></div><div class="score" id="score"></div><p id="feedback"></p>
-    <div id="review"></div>
-  </section>
-  <footer>Practice carefully. Check your answers before submitting.</footer>
-</main>
+    </div>
+    <div class="notice-controls">
+      <button type="button" class="notice-btn" id="noticePrev" aria-label="Previous notice">‹</button>
+      <div class="notice-dots" id="noticeDots" aria-label="Choose notice"></div>
+      <button type="button" class="notice-btn" id="noticeNext" aria-label="Next notice">›</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="since">Serving Sai, Mangaon since 1977</p>
+      <h1>Adv. Haroon Solkar High School</h1>
+      <p class="lead">A co-educational, Urdu-medium school in Sai, Mangaon, Raigad. Classes 5 to 12 under the Maharashtra State Board, with a pre-primary section, a library and a computer lab.</p>
+      <div class="btns">
+        <a class="btn primary" href="#academics">See academics</a>
+        <a class="btn ghost" href="#contact">Find the school</a>
+      </div>
+    </div>
+    <div class="hero-gallery" aria-label="School photos">
+      <figure class="hero-photo hero-photo-main">
+        <img src="images/school-building.jpg" alt="Adv. Haroon Solkar High School building in Sai, Mangaon">
+      </figure>
+      <figure class="hero-photo">
+        <img src="images/computer-lab.jpg" alt="Students working in the school computer lab">
+      </figure>
+      <figure class="hero-photo">
+        <img src="images/school-library.jpg" alt="School library and reading space">
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <dl class="facts" aria-label="School fast facts">
+    <div><dt>Affiliation</dt><dd>State Board</dd></div>
+    <div><dt>Grades</dt><dd>Class 5 to 12</dd></div>
+    <div><dt>Medium</dt><dd>Urdu</dd></div>
+    <div><dt>Category</dt><dd>Co-educational</dd></div>
+    <div><dt>Management</dt><dd>Pvt. Aided</dd></div>
+    <div><dt>Established</dt><dd>1977</dd></div>
+  </dl>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About the school</h2>
+      <p>Adv. Haroon Solkar High School was established in 1977 and is run as a privately managed, government-aided school. It stands in the rural Mangaon block of Raigad district, Maharashtra, under the local jurisdiction of Sai.</p>
+      <p>The school teaches from Class 5 through Class 12 and includes an attached pre-primary section. Urdu is the main language of instruction, and boys and girls study together.</p>
+    </div>
+    <aside class="panel">
+      <h3>At a glance</h3>
+      <ul>
+        <li>Locality: Rural, Mangaon block</li>
+        <li>District: Raigad, Maharashtra</li>
+        <li>Residential facility: No</li>
+        <li>UDISE code: 27240513604</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="academics" class="alt">
+  <div class="wrap">
+    <h2>Academics</h2>
+    <p class="sub">One school from primary to higher secondary, following the State Board curriculum.</p>
+    <div class="grid">
+      <div class="tile"><div class="n">5–12</div><p>Classes taught, covering upper primary, secondary and higher secondary.</p></div>
+      <div class="tile"><div class="n">Urdu</div><p>Medium of instruction across the school.</p></div>
+      <div class="tile"><div class="n">Pre-primary</div><p>An attached pre-primary section is part of the school.</p></div>
+      <div class="tile"><div class="n">1,835</div><p>Books in the school library.</p></div>
+    </div>
+    <div class="programs-block">
+      <h3>Academic programs by stage</h3>
+      <p class="sub">Select a stage to view age/grade coverage, focus areas, and curriculum details.</p>
+
+      <div class="stage-tabs" role="tablist" aria-label="Academic stages">
+        <button type="button" class="stage-tab is-active" role="tab" aria-selected="true" aria-controls="stage-early" id="tab-early" data-stage="stage-early">
+          Early Years / Pre-Primary
+        </button>
+        <button type="button" class="stage-tab" role="tab" aria-selected="false" aria-controls="stage-primary" id="tab-primary" data-stage="stage-primary">
+          Primary School
+        </button>
+        <button type="button" class="stage-tab" role="tab" aria-selected="false" aria-controls="stage-middle" id="tab-middle" data-stage="stage-middle">
+          Middle School
+        </button>
+        <button type="button" class="stage-tab" role="tab" aria-selected="false" aria-controls="stage-high" id="tab-high" data-stage="stage-high">
+          High School
+        </button>
+      </div>
+
+      <div class="stage-panels">
+        <div class="stage-panel is-active" id="stage-early" role="tabpanel" aria-labelledby="tab-early">
+          <div class="stage-meta">
+            <span>Ages ~3–5 years</span>
+            <span>Attached Pre-Primary Section</span>
+          </div>
+          <h4>Early Years / Pre-Primary</h4>
+          <p>Foundational readiness in a supportive, co-educational environment in Sai, Mangaon, introducing early language skills, listening, motor coordination, and group routines ahead of formal schooling .</p>
+          <a class="stage-link" href="#about">Explore early foundation &amp; school overview →</a>
+        </div>
+
+        <div class="stage-panel" id="stage-primary" role="tabpanel" aria-labelledby="tab-primary">
+          <div class="stage-meta">
+            <span>Ages ~10–11 years</span>
+            <span>Class 5 (Upper Primary)</span>
+          </div>
+          <h4>Primary School</h4>
+          <p>Builds core literacy, numeracy, and study habits under the Maharashtra State Board curriculum with Urdu instruction, supported by the school library (1,835 books) and 25 working computers .</p>
+          <a class="stage-link" href="#campus">Explore campus &amp; learning resources →</a>
+        </div>
+
+        <div class="stage-panel" id="stage-middle" role="tabpanel" aria-labelledby="tab-middle">
+          <div class="stage-meta">
+            <span>Ages ~11–14 years</span>
+            <span>Classes 6–8</span>
+          </div>
+          <h4>Middle School</h4>
+          <p>Deepens subject understanding across languages, mathematics, general science, and social studies through hands-on activities, computer lab sessions, and annual exhibitions.</p>
+          <a class="stage-link" href="events.html">Explore student exhibitions &amp; 2026 events →</a>
+        </div>
+
+        <div class="stage-panel" id="stage-high" role="tabpanel" aria-labelledby="tab-high">
+          <div class="stage-meta">
+            <span>Ages ~14–18 years</span>
+            <span>Classes 9–12 (Secondary &amp; Higher Secondary)</span>
+          </div>
+          <h4>High School</h4>
+          <p>Prepares students for Maharashtra State Board secondary and higher secondary milestones with guided instruction from 12 professionally qualified teachers in a co-educational setting.</p>
+          <a class="stage-link" href="#staff">Explore teaching staff &amp; academic support →</a>
+        </div>
+      </div>
+
+      <div class="philosophy-box">
+        <h3>Teaching philosophy</h3>
+        <p class="sub" style="margin-bottom:1.25rem">How students learn at Adv. Haroon Solkar High School across classrooms, labs, and school activities .</p>
+        <div class="phil-grid">
+          <div class="phil-card">
+            <h4>Project-based learning</h4>
+            <p>Students apply classroom concepts to practical tasks—such as building working models for the Science Exhibition and taking part in co-curricular programmes.</p>
+            <a class="stage-link" href="events.html">See project &amp; event highlights →</a>
+          </div>
+          <div class="phil-card">
+            <h4>Bilingual immersion</h4>
+            <p>Instruction centres on Urdu as the medium of teaching while connecting students with State Board coursework, reading resources, and clear communication across subjects.</p>
+            <a class="stage-link" href="#about">See medium &amp; board details →</a>
+          </div>
+          <div class="phil-card">
+            <h4>Individualized pacing</h4>
+            <p>Teachers support learners at different readiness levels—from pre-primary through Class 12—using library reading and computer lab practice to reinforce understanding.</p>
+            <a class="stage-link" href="#campus">See lab &amp; library facilities →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="campus">
+  <div class="wrap">
+    <h2>Campus and facilities</h2>
+    <p class="sub">What students have on site, as recorded in the school’s official data.</p>
+    <div class="grid">
+      <div class="tile"><div class="n">25</div><p>Working computers for students.</p></div>
+      <div class="tile"><div class="n">5 + 5</div><p>Functional toilets for boys and for girls.</p></div>
+      <div class="tile"><div class="n">Yes</div><p>Playground on the school grounds.</p></div>
+      <div class="tile"><div class="n">12</div><p>Teachers, all with professional qualifications.</p></div>
+    </div>
+    <div class="table-scroll" style="margin-top:2rem">
+      <ul class="checks">
+        <li><span>Building</span><span>Private, in good condition</span></li>
+        <li><span>Instructional classrooms</span><span>1</span></li>
+        <li><span>Boundary wall</span><span>Pucca</span></li>
+        <li><span>Electricity</span><span>Active connection</span></li>
+        <li><span>Drinking water</span><span>Tap water</span></li>
+        <li><span>Library</span><span>Yes, 1,835 books</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="staff" class="alt">
+  <div class="wrap split">
+    <div>
+      <h2>Teaching staff</h2>
+      <p class="sub">Twelve teachers, split evenly between men and women.</p>
+      <div class="bar" role="img" aria-label="6 male and 6 female teachers">
+        <span class="m">6 men</span><span class="f">6 women</span>
+      </div>
+      <ul class="checks">
+        <li><span>Total teaching staff</span><span>12</span></li>
+        <li><span>Graduate-level teachers</span><span>9</span></li>
+        <li><span>Teachers with professional qualification</span><span>12</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>School management</h2>
+      <p class="sub">How the school meets its Right to Education (RTE) duties.</p>
+      <ul class="checks">
+        <li><span>School Management Committee</span><span>Constituted</span></li>
+        <li><span>SMC meetings last year</span><span>4</span></li>
+        <li><span>Textbooks received</span><span>Yes</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <h2>Annual events</h2>
+    <p class="sub">Learning goes beyond the classroom. These are the occasions the school organizes every year.</p>
+    <div class="grid">
+      <div class="tile ev">
+        <img src="images/sports-day.jpg" alt="Students participating in Sports Day races" class="ev-img">
+        <div class="ev-body">
+          <h3>Sports Day</h3>
+          <p>Races, team games and track events where students compete and cheer each other on.</p>
+        </div>
+      </div>
+      <div class="tile ev">
+        <img src="images/teachers-day.jpg" alt="Students performing for Teachers' Day" class="ev-img">
+        <div class="ev-body">
+          <h3>Teachers’ Day</h3>
+          <p>Students honour their teachers with programmes, speeches and performances.</p>
+        </div>
+      </div>
+      <div class="tile ev">
+        <img src="images/science-exhibition.jpg" alt="Students presenting models at the Science Exhibition" class="ev-img">
+        <div class="ev-body">
+          <h3>Science Exhibition</h3>
+          <p>Students build and present working models and projects to teachers, parents and visitors.</p>
+        </div>
+      </div>
+    </div>
+    <div class="btns" style="margin-top:2rem">
+      <a class="btn primary" href="events.html">View all 2026 events →</a>
+    </div>
+  </div>
+</section>
+
+<section id="leadership" class="alt">
+  <div class="wrap">
+    <h2>Our leadership</h2>
+    <p class="sub">The people who founded the school and those who guide it today. Names shown here are fictional sample entries for demonstration.</p>
+    <h3 class="grp">Founding members</h3>
+    <div class="people">
+      <div class="person"><div class="avatar">IS</div><b>Mr. Imran Shaikh</b><span>Founding member · Sample</span></div>
+      <div class="person"><div class="avatar">AP</div><b>Mr. Abdul Patel</b><span>Founding member · Sample</span></div>
+      <div class="person"><div class="avatar">YM</div><b>Mr. Yusuf Memon</b><span>Founding member · Sample</span></div>
+    </div>
+    <h3 class="grp">Board members</h3>
+    <div class="people" style="margin-bottom:0">
+      <div class="person"><div class="avatar">FK</div><b>Mr. Faisal Khan</b><span>Chairperson · Sample</span></div>
+      <div class="person"><div class="avatar">NS</div><b>Mr. Nadeem Shaikh</b><span>Secretary · Sample</span></div>
+      <div class="person"><div class="avatar">RK</div><b>Mrs. Rukhsana Khan</b><span>Treasurer · Sample</span></div>
+      <div class="person"><div class="avatar">SA</div><b>Mr. Sameer Ansari</b><span>Board member · Sample</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <h2>What families say</h2>
+    <p class="sub">Illustrative sample feedback for the website layout. Replace with approved testimonials before publishing.</p>
+    <div class="grid">
+      <blockquote><p>“The teachers are supportive and encourage children to learn with confidence. We appreciate the school’s efforts to build a strong foundation.”</p><footer>Sample parent testimonial</footer></blockquote>
+      <blockquote><p>“I enjoy learning with my classmates and taking part in school activities. The teachers make lessons interesting and easy to understand.”</p><footer>Sample student testimonial</footer></blockquote>
+      <blockquote><p>“My school years helped me develop discipline, confidence and lasting friendships. I am grateful for the guidance I received.”</p><footer>Sample alumni testimonial</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="inquiry-card">
+      <h3>Schedule a visit</h3>
+      <p class="inquiry-sub">Share a few quick details and our office will follow up to confirm your visit.</p>
+      <form id="visitForm" class="inquiry-form" novalidate>
+        <div class="form-field">
+          <label for="parentName">Parent Name</label>
+          <input id="parentName" name="parentName" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-field">
+          <label for="childGrade">Child’s Grade</label>
+          <select id="childGrade" name="childGrade" required>
+            <option value="" selected disabled>Select grade or section</option>
+            <option value="Pre-Primary">Pre-Primary (Early Years)</option>
+            <option value="Class 5">Class 5</option>
+            <option value="Class 6">Class 6</option>
+            <option value="Class 7">Class 7</option>
+            <option value="Class 8">Class 8</option>
+            <option value="Class 9">Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="parentContact">Phone / Email</label>
+          <input id="parentContact" name="parentContact" type="text" placeholder="Phone number or email address" required>
+        </div>
+        <button type="submit" class="btn primary inquiry-submit">Schedule a Visit</button>
+        <p id="visitStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="contact-info-col">
+      <h2>Find the school</h2>
+      <p class="sub">Visit the school office in Sai, Mangaon to ask about admissions or schedule a campus visit.</p>
+      <address>
+        Adv. Haroon Solkar High School<br>
+        Sai, Mangaon<br>
+        Raigad, Maharashtra 402122
+      </address>
+      <div class="btns">
+        <a class="btn ghost" href="https://share.google/5Ch498tie7wR4yq0A" target="_blank" rel="noopener noreferrer">Open school location →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <h3>Adv. Haroon Solkar High School</h3>
+      <address class="footer-address">
+        Adv. Haroon Solkar High School<br>
+        Sai, Mangaon, Raigad<br>
+        Maharashtra 402122, India
+      </address>
+      <p class="footer-meta">UDISE Code: 27240513604</p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://share.google/5Ch498tie7wR4yq0A" target="_blank" rel="noopener noreferrer">Google Business</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Admissions &amp; Office Hours</h3>
+      <ul class="footer-list">
+        <li><strong>Admissions Desk:</strong> <a href="tel:+912140262000">+91 2140 262 000</a></li>
+        <li><strong>Email:</strong> <a href="mailto:admissions@haroonsolkarschool.edu.in">admissions@haroonsolkarschool.edu.in</a></li>
+        <li><strong>Mon – Fri:</strong> 9:00 AM – 3:30 PM</li>
+        <li><strong>Saturday:</strong> 9:00 AM – 1:00 PM</li>
+        <li><strong>Sunday:</strong> Closed</li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-map-col">
+      <h3>Campus Map</h3>
+      <div class="map-frame-wrap">
+        <iframe
+          title="Adv. Haroon Solkar High School, Sai, Mangaon Map"
+          src="https://www.google.com/maps?q=Sai,+Mangaon,+Raigad,+Maharashtra+402122&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 1977–2026 Adv. Haroon Solkar High School, Sai</span>
+    <span>UDISE 27240513604</span>
+  </div>
+</footer>
+
 <script>
-const sections = {
-  exponents: [
-    ["Exponent form of 10 × 10", "10^2", "Write your answer using a power, e.g. 10^2."],
-    ["Exponent form of 10 × 10 × 10 × 10", "10^4", "Write your answer using a power of 10."],
-    ["Write 10 × 10 × 10 × 10 using an exponent.", "10^4", "Write your answer using a power of 10."],
-    ["Write 100,000 as a power of 10.", "10^5", "Write your answer using a power of 10."],
-    ["Write 1,000,000 in exponent form.", "10^6", "Write your answer using a power of 10."],
-    ["A scientist writes 10^8. How many zeros are in this number?", "8", "Enter a number."]
-  ],
-  decimals: [
-    ["Convert the decimal 0.005 to a fraction.", "1/200", "Give your answer as a fraction. Equivalent fractions are accepted."],
-    ["Convert the decimal 0.22 to a fraction.", "11/50", "Give your answer as a fraction. Equivalent fractions are accepted."],
-    ["Convert the decimal 0.522 to a fraction.", "261/500", "Give your answer as a fraction. Equivalent fractions are accepted."],
-    ["Convert the fraction 15/1000 to a decimal.", "0.015", "Enter your answer as a decimal."],
-    ["Convert the fraction 235/1000 to a decimal.", "0.235", "Enter your answer as a decimal."]
-  ],
-  operations: [
-    ["Add: 1/4 + 2/4", "3/4", "Enter your answer as a fraction."],
-    ["Add: 2/3 + 1/6", "5/6", "Enter your answer as a fraction."],
-    ["Subtract: 3/4 − 1/4", "1/2", "Enter your answer as a fraction."],
-    ["Subtract: 5/6 − 1/3", "1/2", "Enter your answer as a fraction."],
-    ["Multiply: 2/3 × 3/4", "1/2", "Enter your answer as a fraction."],
-    ["Multiply: 5/8 × 2/5", "1/4", "Enter your answer as a fraction."]
-  ]
-};
-const allQuestions = [];
-let count = 0;
-for (const [sectionId, questions] of Object.entries(sections)) {
-  const container = document.getElementById(sectionId);
-  questions.forEach(([prompt, answer, hint]) => {
-    count++;
-    const item = {id: "q" + count, prompt, answer, section: sectionId};
-    allQuestions.push(item);
-    const div = document.createElement("div");
-    div.className = "question";
-    div.innerHTML = `<div class="number">${count}</div><div><div class="qtext"></div><input class="answer" id="${item.id}" name="${item.id}" type="text" autocomplete="off" placeholder="Type your answer"><div class="hint"></div></div>`;
-    div.querySelector(".qtext").textContent = prompt;
-    div.querySelector(".hint").textContent = hint;
-    container.appendChild(div);
+  document.addEventListener("DOMContentLoaded", () => {
+    const targets = document.querySelectorAll(
+      ".facts, section h2, section .sub, .about > div, .panel, .tile, .split > div, .person, blockquote, address"
+    );
+
+    // Add initial hidden state and stagger items within grids
+    targets.forEach((el) => {
+      el.classList.add("reveal");
+      const parent = el.parentElement;
+      if (parent && (parent.classList.contains("grid") || parent.classList.contains("people"))) {
+        const index = Array.from(parent.children).indexOf(el);
+        el.style.transitionDelay = `${index * 90}ms`;
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            // Clear stagger delay after entrance so hover transitions stay snappy
+            setTimeout(() => {
+              entry.target.style.transitionDelay = "0ms";
+            }, 800);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+    targets.forEach((el) => observer.observe(el));
   });
-}
-function gcd(a,b){return b===0?Math.abs(a):gcd(b,a%b)}
-function fractionValue(s){
-  const match = s.trim().replace(/\s/g,"").match(/^(-?\d+)\/(-?\d+)$/);
-  if(!match) return null;
-  const n=Number(match[1]), d=Number(match[2]);
-  if(!Number.isFinite(n)||!Number.isFinite(d)||d===0) return null;
-  return n/d;
-}
-function normalize(s){return s.trim().toLowerCase().replace(/\s/g,"").replace(/×/g,"*").replace(/\*\*/g,"^")}
-function isCorrect(input, expected, id){
-  const value=normalize(input);
-  if(!value) return false;
-  if(id==="q1"||id==="q2"||id==="q3"||id==="q4"||id==="q5"){
-    const power=value.replace(/[{}]/g,"").replace("10^","10^");
-    return power==="10^"+expected.split("^")[1] || power==="1e"+expected.split("^")[1];
-  }
-  if(expected.includes("/")){
-    const actual=fractionValue(value);
-    return actual!==null && Math.abs(actual-fractionValue(expected))<1e-10;
-  }
-  const actual=Number(value);
-  return value!=="" && Number.isFinite(actual) && Math.abs(actual-Number(expected))<1e-10;
-}
-document.getElementById("examForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  let score=0;
-  const review=document.getElementById("review");
-  review.innerHTML="";
-  allQuestions.forEach(q=>{
-    const input=document.getElementById(q.id);
-    const ok=isCorrect(input.value,q.answer,q.id);
-    if(ok) score++;
-    input.style.borderColor=ok?"#16834a":"#c43232";
-    const row=document.createElement("div");
-    row.className="result-row";
-    const left=document.createElement("span");
-    left.textContent=q.prompt;
-    const right=document.createElement("span");
-    right.className=ok?"correct":"incorrect";
-    right.textContent=ok?"Correct":"Correct answer: "+q.answer;
-    row.append(left,right); review.appendChild(row);
-  });
-  const name=document.getElementById("studentName").value.trim();
-  document.getElementById("studentResult").textContent=name?"Student: "+name:"Student name not provided";
-  document.getElementById("score").textContent=`${score} / ${allQuestions.length}`;
-  document.getElementById("feedback").textContent=score===allQuestions.length?"Excellent work! All answers are correct.":score>=12?"Good effort! Review the answers shown below.":"Keep practising. Check the correct answers below and try again.";
-  document.getElementById("result").style.display="block";
-  document.getElementById("result").scrollIntoView({behavior:"smooth"});
-});
-document.getElementById("resetBtn").addEventListener("click",()=>{
-  setTimeout(()=>{
-    document.querySelectorAll(".answer").forEach(input=>input.style.borderColor="#ccd5e3");
-    document.getElementById("result").style.display="none";
-  },0);
-});
-document.getElementById("examDate").value=new Date().toISOString().slice(0,10);
+
+// Top notice carousel
+    const track = document.querySelector(".notice-track");
+    const slides = track ? Array.from(track.children) : [];
+    const prevBtn = document.getElementById("noticePrev");
+    const nextBtn = document.getElementById("noticeNext");
+    const dotsWrap = document.getElementById("noticeDots");
+    const noticeBar = document.querySelector(".notice-bar");
+
+    if (track && slides.length > 0 && prevBtn && nextBtn && dotsWrap) {
+      let currentIndex = 0;
+      let autoPlayTimer;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      slides.forEach((_, idx) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "notice-dot" + (idx === 0 ? " active" : "");
+        dot.setAttribute("aria-label", `Show notice ${idx + 1}`);
+        dot.addEventListener("click", () => {
+          goToSlide(idx);
+          restartAutoPlay();
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsWrap.children);
+
+      function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+      }
+
+      function startAutoPlay() {
+        if (prefersReducedMotion || slides.length < 2) return;
+        stopAutoPlay();
+        autoPlayTimer = setInterval(() => goToSlide(currentIndex + 1), 5000);
+      }
+
+      function stopAutoPlay() {
+        clearInterval(autoPlayTimer);
+      }
+
+      function restartAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+      }
+
+      prevBtn.addEventListener("click", () => {
+        goToSlide(currentIndex - 1);
+        restartAutoPlay();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        goToSlide(currentIndex + 1);
+        restartAutoPlay();
+      });
+
+      if (noticeBar) {
+        noticeBar.addEventListener("mouseenter", stopAutoPlay);
+        noticeBar.addEventListener("mouseleave", startAutoPlay);
+        noticeBar.addEventListener("focusin", stopAutoPlay);
+        noticeBar.addEventListener("focusout", startAutoPlay);
+      }
+
+      startAutoPlay();
+    }
+
+// Academic stage tabs
+    const stageTabs = Array.from(document.querySelectorAll(".stage-tab"));
+    const stagePanels = Array.from(document.querySelectorAll(".stage-panel"));
+
+    stageTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.getAttribute("data-stage");
+
+        stageTabs.forEach((t) => {
+          const isSelected = t === tab;
+          t.classList.toggle("is-active", isSelected);
+          t.setAttribute("aria-selected", String(isSelected));
+        });
+
+        stagePanels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.id === targetId);
+        });
+      });
+    });
+
+// Schedule a visit form
+    // Schedule a visit form -> sends directly to email via FormSubmit AJAX API
+    const visitForm = document.getElementById("visitForm");
+    const visitStatus = document.getElementById("visitStatus");
+    const recipientEmail = "solkaraarhaan@gmail.com";
+
+    if (visitForm && visitStatus) {
+      visitForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById("parentName");
+        const gradeSelect = document.getElementById("childGrade");
+        const contactInput = document.getElementById("parentContact");
+        const submitBtn = visitForm.querySelector('button[type="submit"]');
+
+        const parentName = nameInput ? nameInput.value.trim() : "";
+        const childGrade = gradeSelect ? gradeSelect.value : "";
+        const contact = contactInput ? contactInput.value.trim() : "";
+
+        if (!parentName || !childGrade || !contact) {
+          visitStatus.textContent = "Please fill in Parent Name, Child’s Grade, and Phone/Email.";
+          return;
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+        visitStatus.textContent = "Sending visit request...";
+
+        try {
+          const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(recipientEmail)}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              _subject: `Campus Visit Request: ${parentName} (${childGrade}) — Adv. Haroon Solkar High School`,
+              "Parent Name": parentName,
+              "Child’s Grade": childGrade,
+              "Phone / Email": contact,
+              "_template": "table"
+            })
+          });
+
+          const data = await response.json();
+
+          if (response.ok && (data.success === "true" || data.success === true)) {
+            visitStatus.textContent = `Visit request sent for ${parentName} (${childGrade}). Our office will reach out via ${contact}.`;
+            visitForm.reset();
+          } else {
+            visitStatus.textContent = "Could not send request right now. Please check the email activation or try again.";
+          }
+        } catch (err) {
+          visitStatus.textContent = "Network error while sending request. Please try again.";
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    }
 </script>
 </body>
 </html>
